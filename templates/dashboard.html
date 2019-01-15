@@ -1,0 +1,19 @@
+{% extends 'header.html' %}
+{% block body %}
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="basics-tab" data-toggle="tab" href="#basics" role="tab" aria-controls="basics" aria-selected="true">Basics</a>
+      <a class="nav-item nav-link" id="web-dev-tab" data-toggle="tab" href="#web-dev" role="tab" aria-controls="web-dev" aria-selected="false">Web Dev</a>
+      <a class="nav-item nav-link" id="data-analysis-tab" data-toggle="tab" href="#data-analysis" role="tab" aria-controls="data-analysis" aria-selected="false">Data Analysis</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="basics" role="tabpanel" aria-labelledby="basics-tab">
+        {% for tpc in TOPIC_DIST["Basics"] %}
+            <li><a href="{{tpc[1]}}">{{tpc[0]}}</a></li>
+        {% endfor %}
+    </div>
+    <div class="tab-pane fade" id="web-dev" role="tabpanel" aria-labelledby="web-dev-tab">second div</div>
+    <div class="tab-pane fade" id="data-analysis" role="tabpanel" aria-labelledby="data-analysis-tab">third div</div>
+  </div>
+{% endblock %}
